@@ -8,11 +8,10 @@
 </head>
 <body>
     <?php
-       $data =array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black');
-       $number =array('c1'=>'Red','c3'=>'white');
-               foreach ($number as $key => $value) {
-                   echo $key."=>".$value."<br>";
-               }
+     $farray = array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black'); 
+     $sarray = array('c2', 'c4');
+     $final = array_diff_key( $farray, array_flip( $sarray));
+     print_r($final);
    ?>
 </body>
 </html>
