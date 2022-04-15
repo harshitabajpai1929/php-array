@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Array advance php</title>
+    <title>Array advance php </title>
+    <style>
+    table,th,td{
+        border: 2px solid black;
+        width: 50%;
+    }
+    </style>
 </head>
 <body>
 <table>
@@ -100,6 +106,42 @@ $products = array(
           } 
         }
            echo '</table>';
+         ?>
+        <br>
+        <br>
+
+        <table>
+        <tr>
+           <th>Category</th>
+           <th>Id</th>
+           <th>Name</th>
+           <th>Brand</th>
+        </tr>
+        <?php
+        $newarr = array("Mobile" => array(
+            array(
+            "id" => "PR004",
+            "name" => "GT-1980",
+            "brand" => "Samsung"
+              ),
+           array(
+          "id" => "PR005",
+          "name" => "IG-5467",
+          "brand" => "Motorola"
+          ),
+            array(
+          "id" => "PR006",
+          "name" => "IP-8930",
+          "brand" => "Apple"
+            )
+           )
+            );
+          foreach ($newarr as $key => $value) {
+              foreach ($value as $key1 => $val1) {
+                echo "<tr><td>$key</td><td>$val1[id]</td><td>$val1[name]</td><td>$val1[brand]</td></tr>";   
+              }   
+          }           
+             echo '</table>';
          ?>
 </body>
 </html>
